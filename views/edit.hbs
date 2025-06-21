@@ -1,0 +1,27 @@
+<section id="edit-container">
+    <div class="edit-container-info">
+        <h1>Edit Course</h1>
+        <form method="post">
+            <label>Title:</label>
+            <input name="title" type="text" id="title" {{#if post.title}}value="{{post.title}}"{{/if}}>
+
+            <label>Type:</label>
+            <input name="type" type="text" id="type" {{#if post.type}}value="{{post.type}}"{{/if}}>
+
+            <label>Certificate:</label>
+            <input name="certificate" type="text" id="certificate" {{#if post.certificate}}value="{{post.certificate}}"{{/if}}>
+
+            <label>Image:</label>
+            <input name="image" type="text" id="image" placeholder="http://..." {{#if post.image}}value="{{post.image}}"{{/if}}>
+
+            <label>Description:</label>
+            <textarea id="content"
+                name="description"> {{#if post.description}}{{post.description}}{{/if}}</textarea>
+
+            <label>Price:</label>
+            <input name="price" type="number" id="price" {{#if post.price}}value="{{post.price}}"{{/if}}>
+
+            <input type="submit" id="btn" value="Edit">
+        </form>
+    </div>
+</section>

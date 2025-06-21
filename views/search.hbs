@@ -1,0 +1,16 @@
+<section class="search-container">
+    <h2>Search Recipes</h2>
+    <form method="get">
+        <input type="text" id="search" name="searchValue1" placeholder="Search for recipes..." {{#if searchValue1}}value="{{searchValue1}}"{{/if}}>
+        <button type="submit">Search</button>
+    </form>
+    <div class="search-results">
+        {{#if posts}}
+            {{#each posts}}
+                {{> item}}
+            {{/each}}
+        {{else}}
+            <p class="no-match">There are no recipes found yet!</p>
+        {{/if}}
+    </div>
+</section>

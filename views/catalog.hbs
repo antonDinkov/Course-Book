@@ -1,0 +1,15 @@
+<section id="all-course-page">
+    <article class="all-course-title">
+        <h1>All Courses</h1>
+    </article>
+    <!--If there are course in the database, show each one-->
+    {{#if posts}}
+        {{#each posts}}
+            {{> item2}}
+        {{/each}}
+    {{else}}
+        <article class="not-available-courses">
+            <h1>No course created yet.</h1>
+        </article>
+    {{/if}}
+</section>

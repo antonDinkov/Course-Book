@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="course-message">
+        <h1 id="site-title">Course Book</h1>
+        <h2 id="site-mid-title">Show your opportunities!</h2>
+    </div>
+
+    {{#if posts}}
+    <div class="last-course">
+        {{#each post}}
+        {{> item}}
+        {{/each}}
+    </div>
+    {{else}}
+    <article class="not-available-course">
+        <h1>No course created yet.</h1>
+    </article>
+    {{/if}}
+</div>
