@@ -19,7 +19,7 @@
                 name="description"> {{#if post.description}}{{post.description}}{{/if}}</textarea>
 
             <label>Price:</label>
-            <input name="price" type="number" id="price" {{#if post.price}}value="{{post.price}}"{{/if}}>
+            <input name="price" type="number" step="any" id="price" {{#if post.price}}value="{{post.price}}"{{/if}}>
 
             <input type="submit" id="btn" value="Edit">
         </form>

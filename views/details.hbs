@@ -8,7 +8,7 @@
         <h3>Type: {{post.type}}</h3>
         <h3>Certificate: {{post.certificate}}</h3>
         <h3>Price: €{{post.price}}</h3>
-        <h3>By: {{post.owner}}</h3>
+        <h3>By: {{username}}</h3>
         <!--If there are sign up users-->
         {{#if interactorsNames}}
         <h4>Signed By: {{interactorsNames}}</h4>
@@ -22,6 +22,7 @@
     </div>
     <div class="btn-container">
         <!-- Only for registered user and creator of the course-->
+        {{#if isLoggedIn}}
         {{#if isAuthor}}
         <a href="/catalog/{{post._id}}/edit">Edit</a>
         <a href="/catalog/{{post._id}}/delete">Delete</a>
@@ -32,6 +33,7 @@
             {{else}}
                 <a href="/catalog/{{post._id}}/interact">Sign up</a>
             {{/if}}
+        {{/if}}
         {{/if}}
     </div>
 </div>

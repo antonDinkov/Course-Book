@@ -46,9 +46,14 @@ async function login(identity, password) {
     await user.save();
 
     return user;
-}
+};
+
+async function getUserById(id) {
+    return User.findById(id).lean();
+};
 
 module.exports = {
     register,
-    login
+    login,
+    getUserById
 }

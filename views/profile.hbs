@@ -5,7 +5,7 @@
         </div>
         <h1 class="user-email">{{email}}</h1>
         <h2 class="created-course-count">Total Created Course: {{ownerToCount}}</h2>
-        <h2 class="sign-course-count">Total Sign up Course: {{interactedWithCount}}</h2>
+        <h2 class="sign-course-count">Total Sign up Course: {{inteactedWithCount}}</h2>
     </div>
 </section>
 <section class="profile-course">
@@ -23,7 +23,7 @@
     <div class="sign-course">
         <h2 class="section-title">Sign Up Course</h2>
             {{#if interactedWithResult}}
-                {{#each}}
+                {{#each interactedWithResult}}
                     {{> item4}}
                 {{/each}}
             {{else}}

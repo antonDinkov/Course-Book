@@ -7,16 +7,20 @@ const dataSchema = new Schema({
         type: String,
         required: true
     },
-    ingredients: {
+    type: {
         type: String,
         required: true
     },
-    instructions: {
+    certificate: {
         type: String,
         required: true
     },
     description: {
         type: String,
+        required: true
+    },
+    price: {
+        type: Number,
         required: true
     },
     image: {
@@ -27,8 +31,8 @@ const dataSchema = new Schema({
             message: 'Image URL must start with http:// or https://'
         }
     },
-    recommendList: {
-        type: [Types.ObjectId],
+    signUpList: {
+        type: [/* Types.ObjectId */],
         ref: 'User',
     },
     owner: {

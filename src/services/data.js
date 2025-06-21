@@ -22,11 +22,12 @@ async function getByIdKey(id, key) {
 async function create(data, authorId) {
     const record = new Data({
         title: data.title,
-        ingredients: data.ingredients,
-        instructions: data.instructions,
+        type: data.type,
+        certificate: data.certificate,
         description : data.description ,
+        price: Number(data.price),
         image: data.image,
-        recommendList: [],
+        signUpList: [],
         owner: authorId
 
     });
@@ -45,13 +46,14 @@ async function update(id, userId, newData) {
 
     if (record.owner.toString() != userId) {
         throw new Error("Access denied");
-    };
+    }
 
     //TODO replace with real properties
         record.title = newData.title;
-        record.ingredients = newData.ingredients;
-        record.instructions = newData.instructions;
+        record.type = newData.type;
+        record.certificate = newData.certificate;
         record.description = newData.description;
+        record.price = Number(newData.price);
         record.image= newData.image;
 
     await record.save();

@@ -53,8 +53,10 @@ function hasInteracted() {
                 throw new Error("You need to be logged in");
             }
 
-            const allInteractors = await getByIdKey(req.params.id, 'likeList');
-            const hasInteracted = allInteractors.map(int => int.toString()).includes(req.user._id.toString());
+            const allInteractors = await getByIdKey(req.params.id, 'signUpList');
+            
+            const allInteractorsArray = allInteractors.map(int => int.toString());
+            const hasInteracted = allInteractorsArray.includes(req.user._id);
             
             if (!hasInteracted) {
                 next();
